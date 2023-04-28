@@ -11,12 +11,12 @@ const users = {}
 app.use(express.static(__dirname + "/static"))
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html")
+  res.sendFile(__dirname + "/static/index.html")
 })
 
 app.get("/:roomName", (req, res) => {
   roomName = req.params.roomName
-  res.sendFile(__dirname + "/room.html")
+  res.sendFile(__dirname + "/static/room.html")
 })
 
 io.on("connection", (socket) => {
